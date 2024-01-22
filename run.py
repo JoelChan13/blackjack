@@ -62,4 +62,14 @@ def deal(number):
 shuffle()
 cards_dealt = deal(2)
 card = cards_dealt[0]
-print(card)
+rank = card[1]
+
+if rank == "A":
+    value = 11
+elif rank == "K" or rank == "Q" or rank == "J":
+    value = 10
+else:
+    value = rank
+
+
+print(rank, value)
