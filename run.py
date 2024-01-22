@@ -38,9 +38,23 @@ for suit in suits:
         cards.append([suit, rank])
 random.shuffle(cards)
 
-"""
-Removes a single element from the cards list to emulate the dealer 
-dealing a card from the deck
-"""
-card = cards.pop
-print(cards)
+
+def shuffle():
+    """
+    a function which shuffles the cards.
+    """
+    random.shuffle(cards)
+
+
+def deal():
+    """
+    Removes a single element from the cards list to emulate the dealer
+    dealing a card from the deck and returns the card.
+    """
+    card = cards.pop()
+    return card
+
+
+shuffle()
+card = deal()
+print(card)
