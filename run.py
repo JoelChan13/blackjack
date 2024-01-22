@@ -32,37 +32,37 @@ import random
 
 
 class Deck:
-    # a class to group the deck
-    cards = []
-    suits = ["spades", "clubs", "hearts", "diamonds"]
-    ranks = [
-        {"rank": "A", "value": 11},
-        {"rank": "2", "value": 2},
-        {"rank": "3", "value": 3},
-        {"rank": "4", "value": 4},
-        {"rank": "5", "value": 5},
-        {"rank": "6", "value": 6},
-        {"rank": "7", "value": 7},
-        {"rank": "8", "value": 8},
-        {"rank": "9", "value": 9},
-        {"rank": "10", "value": 10},
-        {"rank": "K", "value": 10},
-        {"rank": "Q", "value": 10},
-        {"rank": "J", "value": 10},
-    ]
+    def __init__(self):
+        self.cards = []
+        suits = ["spades", "clubs", "hearts", "diamonds"]
+        ranks = [
+            {"rank": "A", "value": 11},
+            {"rank": "2", "value": 2},
+            {"rank": "3", "value": 3},
+            {"rank": "4", "value": 4},
+            {"rank": "5", "value": 5},
+            {"rank": "6", "value": 6},
+            {"rank": "7", "value": 7},
+            {"rank": "8", "value": 8},
+            {"rank": "9", "value": 9},
+            {"rank": "10", "value": 10},
+            {"rank": "K", "value": 10},
+            {"rank": "Q", "value": 10},
+            {"rank": "J", "value": 10},
+        ]
 
     for suit in suits:
         for rank in ranks:
-            cards.append([suit, rank])
+            self.cards.append([suit, rank])
     random.shuffle(cards)
 
-    def shuffle():
+    def shuffle(self):
         """
         a function which shuffles the cards.
         """
-        random.shuffle(cards)
+        random.shuffle(self.cards)
 
-    def deal(number):
+    def deal(self, number):
         """
         function which accepts an argument to deal more than one card and return a
         list of cards instead of a single card, together with a for loop that will
@@ -70,7 +70,7 @@ class Deck:
         """
         cards_dealt = []
         for x in range(number):
-            card = cards.pop()
+            card = self.cards.pop()
             cards_dealt.append(card)
         return cards_dealt
 
