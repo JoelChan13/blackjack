@@ -142,3 +142,15 @@ class Hand:
         if not self.dealer:
             print("Value:", self.get_value())
         print()
+
+
+class Game:
+    def play(self):
+        """
+        creates games according to how many games the user wants to play
+        """
+        game_number = 0
+        games_to_play = 0
+
+        games_to_play = input("How many games do you want to play? ")
+
