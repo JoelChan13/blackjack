@@ -82,12 +82,38 @@ class Deck:
 
 class Hand:
     def __init__(self, dealer=False):
+        """
+        a class for hand which also keeps track of the value
+        """
         self.cards = []
         self.value = 0
         self.dealer = dealer
 
     def add_card(self, card_list):
+        """
+        add a card list to the cards using the extend method
+        """
         self.cards.extend(card_list)
+    
+    def calculate_value(self):
+        """
+        adds the ability to calculate the value of a hand
+        """
+        self.value = 0
+        ace_present = False
+
+        for card in self.cards:
+            card_value = int(card.rank["value"])
+            self.value += card_value
+            if card.rank["rank"] == "A":
+                ace_present = True
+        
+        if ace_present and self.value > 21:
+            # if player total exceeds 21, subtract 10 if the user has an ace
+            self.value -= 10
+
+    def get_value():
+        return self.value 
 
 
 deck = Deck()
