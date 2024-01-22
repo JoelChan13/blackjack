@@ -61,4 +61,5 @@ def deal(number):
 
 shuffle()
 cards_dealt = deal(2)
-print(cards_dealt)
+card = cards_dealt[0]
+print(card)
