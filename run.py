@@ -60,5 +60,5 @@ def deal(number):
 
 
 shuffle()
-card = deal()
-print(card)
+cards_dealt = deal(2)
+print(cards_dealt)
