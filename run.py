@@ -46,13 +46,17 @@ def shuffle():
     random.shuffle(cards)
 
 
-def deal():
+def deal(number):
     """
-    Removes a single element from the cards list to emulate the dealer
-    dealing a card from the deck and returns the card.
+    function which accepts an argument to deal more than one card and return a
+    list of cards instead of a single card, together with a for loop that will
+    add a card from the deck for each card that was dealt.
     """
-    card = cards.pop()
-    return card
+    cards_dealt = []
+    for x in range(number):
+        card = cards.pop()
+        cards_dealt.append(card)
+    return cards_dealt
 
 
 shuffle()
