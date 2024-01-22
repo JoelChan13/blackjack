@@ -9,7 +9,7 @@
 # 8b,  ,a8" 88 88,    ,88 "8a,   ,aa 88`"Yba,  88 88,    ,88 "8a,   ,aa 88`"YbK 
 # Y"Ybd8"'  88 `"8bbdP"Y8  `"Ybbd8"' 88   `Y8a 88 `"8bbdP"Y8  `"Ybbd8"' 88  ` K
 #                                             ,88                                  
-#                                          888P"  
+#                                           888P"  
 
 ###############################################################################
 
@@ -80,5 +80,7 @@ class Deck:
         return cards_dealt
 
 
-card1 = Card("hearts", {"rank": "J", "value": 10})
-print(card1)
+class Hand:
+    def __init__(self):
+        self.cards = []
+        self.cards = 0
