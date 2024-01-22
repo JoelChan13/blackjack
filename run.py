@@ -113,7 +113,18 @@ class Hand:
             self.value -= 10
 
     def get_value():
-        return self.value 
+        """
+        calculate hand value before returning value
+        """
+        self.calculate_value()
+        return self.value
+    
+    def is_blackjack(self):
+        """
+        determine whether the value of the cards has blackjack
+        """
+        self.calculate_value()
+        return self.value() == 21
 
 
 deck = Deck()
