@@ -28,6 +28,7 @@
 # If no player has an amount totalling 21, the closest hand to 21 wins the game
 
 ###############################################################################
+import random
 
 cards = []
 suits = ['spades', 'clubs', 'hearts', 'diamonds']
