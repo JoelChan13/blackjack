@@ -51,27 +51,24 @@ class Deck:
             {"rank": "J", "value": 10},
         ]
 
-    for suit in suits:
-        for rank in ranks:
-            self.cards.append([suit, rank])
-    random.shuffle(cards)
+        for suit in suits:
+            for rank in ranks:
+                self.cards.append([suit, rank])
+        random.shuffle(cards)
 
     def shuffle(self):
         """
         a function which shuffles the cards.
         """
-        random.shuffle(self.cards)
+        if len(self.cards) > 1:
+            random.shuffle(self.cards)
 
     def deal(self, number):
-        """
-        function which accepts an argument to deal more than one card and return a
-        list of cards instead of a single card, together with a for loop that will
-        add a card from the deck for each card that was dealt.
-        """
         cards_dealt = []
         for x in range(number):
-            card = self.cards.pop()
-            cards_dealt.append(card)
+            if len(self.cards) > 0:
+                card = self.cards.pop()
+                cards_dealt.append(card)
         return cards_dealt
 
 
