@@ -37,4 +37,10 @@ for suit in suits:
     for rank in ranks:
         cards.append([suit, rank])
 random.shuffle(cards)
+
+"""
+Removes a single element from the cards list to emulate the dealer 
+dealing a card from the deck
+"""
+card = cards.pop
 print(cards)
