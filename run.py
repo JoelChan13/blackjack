@@ -123,3 +123,4 @@ hand = Hand()
 hand.add_card(deck.deal(2))
 print(hand.cards[0], hand.cards[1])
 
+hand.get_value()
