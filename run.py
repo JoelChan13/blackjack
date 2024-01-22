@@ -151,6 +151,11 @@ class Game:
         """
         game_number = 0
         games_to_play = 0
+        """
+        converts the output from the games to play to int
+        """
+        games_to_play = int(input("How many games do you want to play? "))
 
-        games_to_play = input("How many games do you want to play? ")
 
+g = Game
+g.play
