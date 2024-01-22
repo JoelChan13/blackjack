@@ -74,7 +74,9 @@ class Deck:
             cards_dealt.append(card)
         return cards_dealt
 
-    shuffle()
-    card = deal(1)[0]
 
-    print(card[1]["value"])
+deck1 = Deck()
+deck2 = Deck()
+deck2.shuffle()
+print(deck1.cards)
+print(deck2.cards)
