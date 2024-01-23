@@ -168,6 +168,9 @@ class Game:
             deck = Deck()
             deck.shuffle()
 
+            player_hand = Hand()
+            dealer_hand = Hand(dealer=True)
+
 
 
 g = Game
