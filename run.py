@@ -165,6 +165,9 @@ class Game:
         while game_number < games_to_play:
             game_number += 1
 
+            deck = Deck()
+            deck.shuffle()
+
 
 
 g = Game
