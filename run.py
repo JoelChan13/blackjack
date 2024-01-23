@@ -156,6 +156,16 @@ class Game:
         """
         games_to_play = int(input("How many games do you want to play? "))
 
+        while not games_to_play.isdigital() or int(games_to_play) <= 0:
+            print("Enter a number here.")
+            games_to_play = input("How many games do you want to play? ")
+        
+        games_to_play = int(games_to_play)
+
+        while game_number < games_to_play:
+            game_number += 1
+
+
 
 g = Game
 g.play
