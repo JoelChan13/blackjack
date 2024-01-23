@@ -182,26 +182,35 @@ class Game:
             dealer_hand.display()
 
     def check_winner(self, player_hand, dealer_hand):
-        """
-        method to check the winner. if player or dealer go over 21, 
-        it means they lost and their opponent won. If player or dealer 
-        hit 21/blackjack, it means they won. if both players hit blackjack, 
-        a tie is called.
-        """
-        if player_hand.get.value() > 21:
-            print("Player went bust. Dealer Wins")
-            return True
-        elif dealer_hand.get.value() > 21:
-            print("Dealer went bust. You Win")
-            return True
-        elif dealer_hand.is_blackjack() and player_hand.is_blackjack():
-            print("Both player & dealer have blackjack. TIE")
-            return True
-        elif player_hand.is_blackjack():
-            print("You hit blackjack. You Win")
-            return True
-        elif dealer_hand.is_blackjack():
-            print("Dealer hit blackjack. Dealer Wins")
+        if not game_over:
+            """
+            method to check the winner. if player or dealer go over 21, 
+            it means they lost and their opponent won. If player or dealer 
+            hit 21/blackjack, it means they won. if both players hit blackjack, 
+            a tie is called.
+            """
+            if player_hand.get.value() > 21:
+                print("You went bust. Dealer Wins")
+                return True
+            elif dealer_hand.get.value() > 21:
+                print("Dealer went bust. You Win")
+                return True
+            elif dealer_hand.is_blackjack() and player_hand.is_blackjack():
+                print("Both you & dealer have blackjack. TIE")
+                return True
+            elif player_hand.is_blackjack():
+                print("You hit blackjack. You Win")
+                return True
+            elif dealer_hand.is_blackjack():
+                print("Dealer hit blackjack. Dealer Wins")
+                return True
+        else:
+            if player_hand.get_value() > dealer_hand.get_value():
+                print("You Win")
+            elif player_hand.get_value() == dealer_hand.get_value():
+                print("TIE")
+            else:
+                print("Dealer Wins")
             return True
         return False
 
