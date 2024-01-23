@@ -124,9 +124,9 @@ class Hand:
         determine whether the value of the cards has blackjack
         """
         self.calculate_value()
-        return self.value() == 21
+        return self.value == 21
     
-    def display(self):
+    def display(self, show_all_dealer_cards=False):
         """
         creates a method to display information about the hand 
         and hides the dealer's second card
@@ -156,11 +156,11 @@ class Game:
         """
         games_to_play = int(input("How many games do you want to play? "))
 
-        while not games_to_play.isdigital() or int(games_to_play) <= 0:
+        while not str(games_to_play).isdigit() or int(games_to_play) <= 0:
             print("Enter a number here.")
             games_to_play = input("How many games do you want to play? ")
         
-        games_to_play = int(games_to_play)
+        games_to_play = int(str(games_to_play))
 
         while game_number < games_to_play:
             game_number += 1
@@ -224,8 +224,10 @@ class Game:
             argument True to indicate the game is over
             """
             self.check_winner(player_hand, dealer_hand, True)
+        
+        print("Congratulations and Thanks for playing Blackjack")
 
-    def check_winner(self, player_hand, dealer_hand):
+    def check_winner(self, player_hand, dealer_hand, game_over=False):
         if not game_over:
             """
             method to check the winner. if player or dealer go over 21, 
@@ -233,10 +235,10 @@ class Game:
             hit 21/blackjack, it means they won. if both players hit blackjack, 
             a tie is called.
             """
-            if player_hand.get.value() > 21:
+            if player_hand.get_value() > 21:
                 print("You went bust. Dealer Wins")
                 return True
-            elif dealer_hand.get.value() > 21:
+            elif dealer_hand.get_value() > 21:
                 print("Dealer went bust. You Win")
                 return True
             elif dealer_hand.is_blackjack() and player_hand.is_blackjack():
@@ -259,5 +261,5 @@ class Game:
         return False
 
 
-g = Game
-g.play
+game = Game()
+game.play()
