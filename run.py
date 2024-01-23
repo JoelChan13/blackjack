@@ -192,6 +192,14 @@ class Game:
                 while choice not in ["h", "s", "hit", "stand"]:
                     choice = input("Please select 'Hit' or 'Stand': ").lower()
                     print()
+                if choice in ["hit", "h"]:
+                    player_hand.add_card(deck.deal(1))
+                    player_hand.display()
+            if self.check_winner(player_hand, dealer_hand):
+                continue
+
+            player_hand_value = player_hand.get_value()
+            dealer_hand_value = dealer_hand.get_value()
                  
     def check_winner(self, player_hand, dealer_hand):
         if not game_over:
