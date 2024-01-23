@@ -202,9 +202,29 @@ class Game:
             dealer_hand_value = dealer_hand.get_value()
 
             while dealer_hand_value < 17:
+                """
+                creates a while loop so the dealer keeps drawing cards until 
+                reaching 17 and reveals the hand after
+                """
                 dealer_hand.add_card(deck.deal(1))
                 dealer_hand_value = dealer_hand.get_value()
-                 
+            
+            # show all dealer cards
+            dealer_hand.display(show_all_dealer_cards=True)
+            
+            if self.check_winner(player_hand, dealer_hand):
+                continue
+
+            print("Final Results")
+            print("Your Hand:", player_hand_value)
+            print("Dealer Hand:", dealer_hand_value)
+
+            """
+            check winner function but not in an if statement and add a third 
+            argument True to indicate the game is over
+            """
+            self.check_winner(player_hand, dealer_hand, True)
+
     def check_winner(self, player_hand, dealer_hand):
         if not game_over:
             """
