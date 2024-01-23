@@ -181,6 +181,18 @@ class Game:
             player_hand.display()
             dealer_hand.display()
 
+            if self.check_winner(player_hand, dealer_hand):
+                continue
+            
+            choice = ""
+            while player_hand.get_value() < 21 \
+                    and choice not in ["s", "stand"]:
+                choice = input("Please select ‘Hit’ or ‘Stand’: "). lower()
+                print()
+                while choice not in ["h", "s", "hit", "stand"]:
+                    choice = input("Please select 'Hit' or 'Stand': ").lower()
+                    print()
+                 
     def check_winner(self, player_hand, dealer_hand):
         if not game_over:
             """
@@ -213,10 +225,6 @@ class Game:
                 print("Dealer Wins")
             return True
         return False
-
-
-
-
 
 
 g = Game
