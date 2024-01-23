@@ -200,6 +200,10 @@ class Game:
 
             player_hand_value = player_hand.get_value()
             dealer_hand_value = dealer_hand.get_value()
+
+            while dealer_hand_value < 17:
+                dealer_hand.add_card(deck.deal(1))
+                dealer_hand_value = dealer_hand.get_value()
                  
     def check_winner(self, player_hand, dealer_hand):
         if not game_over:
