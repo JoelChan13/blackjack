@@ -174,6 +174,12 @@ class Game:
             for i in range(2):
                 player_hand.add_card(deck.deal(1))
                 dealer_hand.add_card(deck.deal(1))
+            
+            print()
+            print("*" * 30)
+            print(f"Game {game_number} of {games_to_play}")
+            player_hand.display()
+            dealer_hand.display()
 
 
 
