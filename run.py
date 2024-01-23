@@ -171,6 +171,11 @@ class Game:
             player_hand = Hand()
             dealer_hand = Hand(dealer=True)
 
+            for i in range(2):
+                player_hand.add_card(deck.deal(1))
+                dealer_hand.add_card(deck.deal(1))
+
+
 
 
 g = Game
