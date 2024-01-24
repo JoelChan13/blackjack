@@ -145,6 +145,11 @@ class Hand:
 
 
 class Game:
+    def __init__(self):
+        self.player_wins = 0
+        self.dealer_wins = 0
+        self.ties = 0
+
     def play(self):
         """
         creates games according to how many games the user wants to play
@@ -228,38 +233,60 @@ class Game:
         print("Congratulations and Thanks for playing Blackjack")
 
     def check_winner(self, player_hand, dealer_hand, game_over=False):
-        if not game_over:
-            """
+        """
             method to check the winner. if player or dealer go over 21, 
             it means they lost and their opponent won. If player or dealer 
             hit 21/blackjack, it means they won. if both players hit blackjack, 
             a tie is called.
-            """
+        """
+        if not game_over:
             if player_hand.get_value() > 21:
                 print("You went bust. Dealer Wins")
+                self.dealer_wins += 1
                 return True
             elif dealer_hand.get_value() > 21:
                 print("Dealer went bust. You Win")
+                self.player_wins += 1
                 return True
             elif dealer_hand.is_blackjack() and player_hand.is_blackjack():
                 print("Both you & dealer have blackjack. TIE")
+                self.ties += 1
                 return True
             elif player_hand.is_blackjack():
                 print("You hit blackjack. You Win")
+                self.player_wins += 1
                 return True
             elif dealer_hand.is_blackjack():
                 print("Dealer hit blackjack. Dealer Wins")
+                self.dealer_wins += 1
                 return True
         else:
             if player_hand.get_value() > dealer_hand.get_value():
                 print("You Win")
+                self.player_wins += 1
             elif player_hand.get_value() == dealer_hand.get_value():
                 print("TIE")
+                self.tie += 1
             else:
                 print("Dealer Wins")
+                self.dealer_wins += 1
             return True
         return False
+    
+    def show_results(self):
+        print("\nGame Results:")
+        print("Player Wins:", self.player_wins)
+        print("Dealer Wins:", self.dealer_wins)
+        print("Ties:", self.ties)
+
+        if self.player_wins > self.dealer_wins:
+            print("Congratulations! You are the overall winner.")
+        elif self.player_wins < self.dealer_wins:
+            print("Better luck next time. The dealer is the overall winner.")
+        else:
+            print("It's a tie overall.")
 
 
 game = Game()
 game.play()
+game.show_results()
