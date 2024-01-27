@@ -50,6 +50,7 @@ Blackjack is a python terminal game, which runs in the Code Institute mock termi
 
 ### Validator Testing
 - Testing was done through PEP8 linter and the result was satisfactory
+
 ![PEP8 Validation]( https://github.com/JoelChan13/blackjack/blob/main/images/validator-result.jpg)
 
 #### Functional Testing
@@ -64,7 +65,6 @@ Blackjack is a python terminal game, which runs in the Code Institute mock termi
 
 ## Deployment
 - The project was deployed using the Code Institute mock terminal for Heroku, after the Heroku app was linked to the GitHub repository.
-- [Blackjack Live Link](https://p3-blackjack-e37a57443a78.herokuapp.com/)
 
 ## Credits
 
