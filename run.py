@@ -1,15 +1,15 @@
 ###############################################################################
 
-# 8         88                       88        88                       88         
-# 8         88                       88        ""                       88         
-# 8         88                       88                                 88         
-# 8,dPYba,  88 ,adPPYYba,  ,adPPYba, 88   ,d8  88 ,adPPYYba,  ,adPPYba, 88  ,dK  
-# 8P'   "8a 88 ""     `Y8 a8"     "" 88 ,a8"   88 ""     `Y8 a8"     "" 88 ,a8   
-# 8      d8 88 ,adPPPPP88 8b         8888[     88 ,adPPPPP88 8b         8888[      
-# 8b,  ,a8" 88 88,    ,88 "8a,   ,aa 88`"Yba,  88 88,    ,88 "8a,   ,aa 88`"YbK 
+# 8         88                       88        88                       88
+# 8         88                       88        ""                       88
+# 8         88                       88                                 88
+# 8,dPYba,  88 ,adPPYYba,  ,adPPYba, 88   ,d8  88 ,adPPYYba,  ,adPPYba, 88  ,dK
+# 8P'   "8a 88 ""     `Y8 a8"     "" 88 ,a8"   88 ""     `Y8 a8"     "" 88 ,a8
+# 8      d8 88 ,adPPPPP88 8b         8888[     88 ,adPPPPP88 8b         8888[
+# 8b,  ,a8" 88 88,    ,88 "8a,   ,aa 88`"Yba,  88 88,    ,88 "8a,   ,aa 88`"YbK
 # Y"Ybd8"'  88 `"8bbdP"Y8  `"Ybbd8"' 88   `Y8a 88 `"8bbdP"Y8  `"Ybbd8"' 88  ` K
-#                                             ,88                                  
-#                                           888P"  
+#                                             ,88
+#                                           888P"
 
 ###############################################################################
 
@@ -94,7 +94,7 @@ class Hand:
         add a card list to the cards using the extend method
         """
         self.cards.extend(card_list)
-    
+
     def calculate_value(self):
         """
         adds the ability to calculate the value of a hand
@@ -107,7 +107,7 @@ class Hand:
             self.value += card_value
             if card.rank["rank"] == "A":
                 ace_present = True
-        
+
         if ace_present and self.value > 21:
             # if player total exceeds 21, subtract 10 if the user has an ace
             self.value -= 10
@@ -118,20 +118,20 @@ class Hand:
         """
         self.calculate_value()
         return self.value
-    
+
     def is_blackjack(self):
         """
         determine whether the value of the cards has blackjack
         """
         self.calculate_value()
         return self.value == 21
-    
+
     def display(self, show_all_dealer_cards=False):
         """
-        creates a method to display information about the hand 
+        creates a method to display information about the hand
         and hides the dealer's second card
-        """ 
-        print(f'''{"Dealer’s" if self.dealer else "Your"} hand:''')
+        """
+        print(f'''{"Dealer's" if self.dealer else "Your"} hand:''')
         for index, card in enumerate(self.cards):
             if index == 0 and self.dealer and not show_all_dealer_cards \
                  and not self.is_blackjack():
@@ -164,7 +164,7 @@ class Game:
         while not str(games_to_play).isdigit() or int(games_to_play) <= 0:
             print("Enter a number here.")
             games_to_play = input("How many games do you want to play? ")
-        
+
         games_to_play = int(str(games_to_play))
 
         while game_number < games_to_play:
@@ -179,7 +179,7 @@ class Game:
             for i in range(2):
                 player_hand.add_card(deck.deal(1))
                 dealer_hand.add_card(deck.deal(1))
-            
+
             print()
             print("*" * 30)
             print(f"Game {game_number} of {games_to_play}")
@@ -188,11 +188,11 @@ class Game:
 
             if self.check_winner(player_hand, dealer_hand):
                 continue
-            
+
             choice = ""
             while player_hand.get_value() < 21 \
                     and choice not in ["s", "stand"]:
-                choice = input("Please ‘Hit’(h) or ‘Stand’(s): ").lower()
+                choice = input("Please 'Hit'(h) or 'Stand'(s): ").lower()
                 print()
                 while choice not in ["h", "s", "hit", "stand"]:
                     choice = input("Please 'Hit'(h) or 'Stand'(s): ").lower()
@@ -208,15 +208,15 @@ class Game:
 
             while dealer_hand_value < 17:
                 """
-                creates a while loop so the dealer keeps drawing cards until 
+                creates a while loop so the dealer keeps drawing cards until
                 reaching 17 and reveals the hand after
                 """
                 dealer_hand.add_card(deck.deal(1))
                 dealer_hand_value = dealer_hand.get_value()
-            
+
             # show all dealer cards
             dealer_hand.display(show_all_dealer_cards=True)
-            
+
             if self.check_winner(player_hand, dealer_hand):
                 continue
 
@@ -225,18 +225,18 @@ class Game:
             print("Dealer Hand:", dealer_hand_value)
 
             """
-            check winner function but not in an if statement and add a third 
+            check winner function but not in an if statement and add a third
             argument True to indicate the game is over
             """
             self.check_winner(player_hand, dealer_hand, True)
-        
+
         print("Congratulations and Thanks for playing Blackjack")
 
     def check_winner(self, player_hand, dealer_hand, game_over=False):
         """
-            method to check the winner. if player or dealer go over 21, 
-            it means they lost and their opponent won. If player or dealer 
-            hit 21/blackjack, it means they won. if both players hit blackjack, 
+            method to check the winner. if player or dealer go over 21,
+            it means they lost and their opponent won. If player or dealer
+            hit 21/blackjack, it means they won. if both players hit blackjack,
             a tie is called.
         """
         if not game_over:
@@ -272,7 +272,7 @@ class Game:
                 self.dealer_wins += 1
             return True
         return False
-    
+
     def show_results(self):
         print("\nGame Results:")
         print("Player Wins:", self.player_wins)
