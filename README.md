@@ -28,9 +28,9 @@ Blackjack is a python terminal game, which runs in the Code Institute mock termi
 - Ability to change card value based on certain game conditions, such as switching the value of the Ace from 11 to 1 accordingly.
 - Input validation & error checking with prompts to enter correct data.
 
-![Wrong Input]( https://github.com/JoelChan13/blackjack/blob/main/images/p3-blackjack-mockup.jpg)
+![Games To Play]( https://github.com/JoelChan13/blackjack/blob/main/images/games-to-play.jpg)
 
-![Wrong Input]( https://github.com/JoelChan13/blackjack/blob/main/images/p3-blackjack-mockup.jpg)
+![Overall Result]( https://github.com/JoelChan13/blackjack/blob/main/images/overall-result.jpg)
 
 ### Future Features
 - Add ASCII art to the cards to add immersiveness to the game.
@@ -44,32 +44,30 @@ Blackjack is a python terminal game, which runs in the Code Institute mock termi
 - Wrong inputs were submitted to check if the game responds correctly.
 - Tested in local terminal and Code Institute Heroku terminal
 
-![Wrong Input]( https://github.com/JoelChan13/blackjack/blob/main/images/p3-blackjack-mockup.jpg)
+![Wrong Input]( https://github.com/JoelChan13/blackjack/blob/main/images/wrong-input.jpg)
+
+![Overall Result]( https://github.com/JoelChan13/blackjack/blob/main/images/overall-result.jpg)
 
 ### Validator Testing
 - Testing was done through PEP8 linter and the result was satisfactory
-![PEP8 Validation]()
+![PEP8 Validation]( https://github.com/JoelChan13/blackjack/blob/main/images/validator-result.jpg)
 
 #### Functional Testing
 | Action  | Expected Outcome  | Pass/Fail |
 | :------------ |:---------------:| -----:|
-| Click on start button| Go to wound-care-trivia.html/start quiz & shuffles questions and answers        |    Pass |
-| Click on high scores button | Go to highscores.html        |    Pass |
-| Input Username | Stores username in local storage        |    Pass |
-| Click on correct answer | Highlights answer button in green and displays rationale and next button        |    Pass |
-| Click on incorrect answer | Highlights answer button in red and displays rationale and next button        |    Pass |
-| Click on next button | Displays following question, and once all questions have been answered displays result page        |    Pass |
-| Click on retry button | Restarts quiz        |    Pass |
-| Click on return to home button | Redirects user to home page/index.html        |    Pass |
-| Hover over answer buttons | highlights buttons in different colour and changes the cursor to a pointer        |    Pass |
-| Hover over Recipes answer button once answer is submitted | Changes cursor to a no symbol         |    Pass |
+| Submit number of games to play| Starts the number of games chosen        |    Pass |
+| Submit wrong input when prompted for games to play | Re-ask question        |    Pass |
+| Submit hit | Player dealt another card        |    Pass |
+| Submit stand | Switches to dealer to finish the game        |    Pass |
+| Go bust if the total score is over the value of 21 | Player or dealer lose game if they go over 21 - game ends and winner declared        |    Pass |
+| Complete games | Total score presented and winner declared        |    Pass |
 
 ## Deployment
-- The site was deployed to GitHub pages. From the GitHub repository, access wound-care-trivia. Click on the deployments section. Click on the active deployment link provided.
+- The project was deployed using the Code Institute mock terminal for Heroku, after the Heroku app was linked to the GitHub repository.
 - [Blackjack Live Link](https://p3-blackjack-e37a57443a78.herokuapp.com/)
 
 ## Credits
 
 ### Content
-- Boilerplate HTML Structure Code was taken from the ci-full-template found in CI GitHub repo by lechien73
-- The information related to wound care, found in the rationale of every answer was obtained from The British Journal of Nursing.
+- Code Institute for the template code
+- The geeksforgeeks website for guidance when compiling the steps for the blackjack game (https://www.geeksforgeeks.org/).
