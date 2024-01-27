@@ -159,13 +159,13 @@ class Game:
         """
         converts the output from the games to play to int
         """
-        games_to_play = int(input("How many games do you want to play? \n"))
+        games_to_play = input("How many games do you want to play? \n")
 
-        while not str(games_to_play).isdigit() or int(games_to_play) <= 0:
+        while not games_to_play.isdigit() or int(games_to_play) <= 0:
             print("Enter a number here.")
             games_to_play = input("How many games do you want to play? \n")
 
-        games_to_play = int(str(games_to_play))
+        games_to_play = int(games_to_play)
 
         while game_number < games_to_play:
             game_number += 1
@@ -266,7 +266,7 @@ class Game:
                 self.player_wins += 1
             elif player_hand.get_value() == dealer_hand.get_value():
                 print("TIE")
-                self.tie += 1
+                self.ties += 1
             else:
                 print("Dealer Wins")
                 self.dealer_wins += 1
