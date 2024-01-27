@@ -159,11 +159,11 @@ class Game:
         """
         converts the output from the games to play to int
         """
-        games_to_play = int(input("How many games do you want to play? "))
+        games_to_play = int(input("How many games do you want to play? \n"))
 
         while not str(games_to_play).isdigit() or int(games_to_play) <= 0:
             print("Enter a number here.")
-            games_to_play = input("How many games do you want to play? ")
+            games_to_play = input("How many games do you want to play? \n")
 
         games_to_play = int(str(games_to_play))
 
@@ -192,10 +192,10 @@ class Game:
             choice = ""
             while player_hand.get_value() < 21 \
                     and choice not in ["s", "stand"]:
-                choice = input("Please 'Hit'(h) or 'Stand'(s): ").lower()
+                choice = input("Please 'Hit'(h) or 'Stand'(s): \n").lower()
                 print()
                 while choice not in ["h", "s", "hit", "stand"]:
-                    choice = input("Please 'Hit'(h) or 'Stand'(s): ").lower()
+                    choice = input("Please 'Hit'(h) or 'Stand'(s): \n").lower()
                     print()
                 if choice in ["hit", "h"]:
                     player_hand.add_card(deck.deal(1))
