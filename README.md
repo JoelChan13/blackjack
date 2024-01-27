@@ -1,58 +1,54 @@
 # Blackjack
-Blackjack is a python terminal game, which runs in the Code Institute mock terminal on Heroku. The main goal of this game is to reach a total of 21, which is also known as Blackjack
+Blackjack is a python terminal game, which runs in the Code Institute mock terminal on Heroku. The main goal of this game is to reach a total of 21, which is also known as Blackjack, if neither the player nor the computer reach 21, the closest to 21, wins the game. The King, Queen, and Jack cards have a value of 10, while the Ace cards have a value of 11 when drawn and if the dealer goes over 21 through the use of an Ace, the value changes to 1. 
 
 [Blackjack Live Link](https://p3-blackjack-e37a57443a78.herokuapp.com/)
 
-![Responsive Mockup]( https://github.com/JoelChan13/wound-care-trivia/blob/main/assets/images/wound-care-trivia-index-mockup.jpg)
+![Responsive Mockup]( https://github.com/JoelChan13/blackjack/blob/main/images/p3-blackjack-mockup.jpg)
+
+## How to Play
+- The player chooses how many games s/he wants to play in the input field.
+- The player and the dealer are presented with two cards, the player's hand is uncovered whilst the dealer's hand is only partially revealed, as one of the cards is left hidden.
+- The player is then prompted to either Hit, by submitting Hit or H in the input field, or Stand, by submitting Stand or S.
+- If the user submits a different data type, the same prompt is presented until the correct data is submitted.
+- Once the player stands, the dealer's hand is revealed and the dealer will keep on hitting until the total value of the dealer's hand reaches a minimum of 17.
+- If both the player and the dealer end up with the same total, a tie is declared.
+- Once the winner of the hand is determined, the game moves on to the next game until the number of games selected by the user is completed.
+- The total score is presented after all the games have been played.
 
 ## Features
 
-### Start
-- The start button is featured at the center of the home page and prompts the commencement of the quiz.
-- Upon commencing the quiz, the user is prompted to submit a username, which is stored in the local storage.
+### Existing Features
+- Ability to play against a computer.
+- Select number of games to be played before determining total wins.
+- Random card shuffling & dealing.
+- Ability to hide one of the dealer's cards.
+- Ability for the dealer to automatically keep hitting cards until reaching a minimum of 17 as a total value.
+- Accepts user input.
+- Maintains a score.
+- Ability to change card value based on certain game conditions, such as switching the value of the Ace from 11 to 1 accordingly.
+- Input validation & error checking with prompts to enter correct data.
 
-### High Scores
-- The high scores button is featured at the center of the home page, below the Start button and directs the user to the high scores page.
-- On pressing the high scores button, the user is taken to the high scores page, which retrieves the top 5 results, together with their respective username, from the local storage.
+![Wrong Input]( https://github.com/JoelChan13/blackjack/blob/main/images/p3-blackjack-mockup.jpg)
 
-![Start & High Score Buttons](https://github.com/JoelChan13/wound-care-trivia/blob/main/assets/images/wound-care-trivia-index-mockup.jpg)
+![Wrong Input]( https://github.com/JoelChan13/blackjack/blob/main/images/p3-blackjack-mockup.jpg)
 
-![High Scores Page]( https://github.com/JoelChan13/wound-care-trivia/blob/main/assets/images/wound-care-trivia-highscores-mockup.png)
+### Future Features
+- Add ASCII art to the cards to add immersiveness to the game.
+- Add a 5 second timer when it's the player's turn, if no input is provided, player stands automatically.
 
-### Answer Selection & Next Buttons
-- The answers are shuffled and can be selected by clicking on them.
-- Upon clicking the selected answer, the answer will turn green, if correct, or red, if incorrect, whilst also presenting the next button.
-- The user is not allowed to press any other answer once the selection has been made.
-- A rationale, highlighted in green, is provided after every answer is submitted to provide further information to the user.
-- The font colour and background have been chosen accordingly to ensure better readability.
-- A rationale, highlighted in green, is provided after every answer is submitted to provide further information to the user.
-
-![Answer Selection & Rationale]( https://github.com/JoelChan13/wound-care-trivia/blob/main/assets/images/wound-care-trivia-answer-mockup.png)
-
-### Result & Return to Home Page
-- The user is presented with the result once all questions have been answered and a prompt to retry the quiz or return to home is presented.
-- By clicking the retry button, the user restarts the quiz and is prompted to provide a username.
-- By clicking the return to home button, the user is taken to the home page.
-
-![Result]( https://github.com/JoelChan13/wound-care-trivia/blob/main/assets/images/wound-care-trivia-result-mockup.jpg)
+## Data Model
+- 
 
 ## Testing
-- The page was tested on multiple browsers, including Firefox, Chrome, Brave, Edge, and Safari.
-- The project is responsive and fully functional in all standard screen sizes.
-- Testing was conducted to ensure ease of readability on different devices.
+- The game was tested on multiple browsers, including Firefox, Chrome, Brave, Edge, and Safari.
+- Wrong inputs were submitted to check if the game responds correctly.
+- Tested in local terminal and Code Institute Heroku terminal
+
+![Wrong Input]( https://github.com/JoelChan13/blackjack/blob/main/images/p3-blackjack-mockup.jpg)
 
 ### Validator Testing
-#### HTML
-- No errors were returned when testing all sections of the project through the W3C validation.
-#### CSS  
-- No errors were returned when testing styling section of the project through the W3C validation.
-#### Accessibility
-- Testing was done through Lighthouse DevTool and the result was satisfactory
-![Lighthouse Validation](https://github.com/JoelChan13/wound-care-trivia/blob/main/assets/images/lighthouse-result-1.jpg)
-
-![Lighthouse Validation](https://github.com/JoelChan13/wound-care-trivia/blob/main/assets/images/lighthouse-result-2.jpg)
-
-![Lighthouse Validation](https://github.com/JoelChan13/wound-care-trivia/blob/main/assets/images/lighthouse-result-3.jpg)
+- Testing was done through PEP8 linter and the result was satisfactory
+![PEP8 Validation]()
 
 #### Functional Testing
 | Action  | Expected Outcome  | Pass/Fail |
@@ -70,13 +66,7 @@ Blackjack is a python terminal game, which runs in the Code Institute mock termi
 
 ## Deployment
 - The site was deployed to GitHub pages. From the GitHub repository, access wound-care-trivia. Click on the deployments section. Click on the active deployment link provided.
-- [Wound Care Trivia Link](https://joelchan13.github.io/wound-care-trivia/)
-
-### Local Deployment
-- The repository was cloned to local machine using the following command in the terminal: git clone <https://github.com/JoelChan13/wound-care-trivia.git>
-- The following command was submitted in the terminal: cd wound-care-trivia.
-- index.html was opened in the browser to start website.
-
+- [Blackjack Live Link](https://p3-blackjack-e37a57443a78.herokuapp.com/)
 
 ## Credits
 
