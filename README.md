@@ -70,6 +70,10 @@ Blackjack is a python terminal game, which runs in the Code Institute mock termi
 
 ## Deployment
 - The project was deployed using the Code Institute mock terminal for Heroku, after the Heroku app was linked to the GitHub repository.
+- A Heroku account was created.
+- Buildbacks for Python and NodeJS set up in the respective order.
+- Heroku account linked to GitHub repository.
+- Deployed project using the deploy button.
 
 ## Credits
 
